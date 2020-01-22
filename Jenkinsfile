@@ -19,11 +19,13 @@ pipeline {
                   }
                   stage('Code Quality') {
                    steps {
+                            dir("UMAuto"){
                         script{
                              withSonarQubeEnv(installationName: 'SonarQube'){
                                     bat label: '', script: 'mvn sonar:sonar'
                              }
                         }
+                            }
                   }
 
                 }
