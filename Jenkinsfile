@@ -12,7 +12,9 @@ pipeline {
                                 maven 'Maven'
                             }
                             steps {
+                                     dir("UMAuto"){
                                powershell 'mvn clean package'
+                                     }
                             }
                   }
                   stage('Code Quality') {
